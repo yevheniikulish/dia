@@ -1,169 +1,230 @@
 .slider {
-  &__container {
-    position: relative;
-    overflow: hidden;
-  }
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 503px);
+  min-height: 117px;
 
-  &__pagination {
+  &__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-bottom: 15px;
-
-    @include tablet {
-      justify-content: flex-start;
-      padding: 0;
-      margin-bottom: 25px;
-    }
-
-    @include desktop {
-      margin-bottom: 50px;
-    }
-  }
-
-  &__point {
-    display: none;
-  }
-
-  &__label {
-    cursor: pointer;
-    display: block;
-    color: $dark-gray;
-    font-size: $main-size;
-    line-height: $bigger-size;
-    letter-spacing: $letter-spacing;
-    text-transform: uppercase;
-    transition: color $transition;
-
-    @include tablet {
-      width: max-content;
-    }
-
-    &:hover {
-      color: $hover-green;
-    }
-  }
-
-  &__label-container {
-    @include tablet {
-      margin-right: 10px;
-      width: 70px;
-
-    }
-
-    @include desktop {
-      width: 90px;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &__wrapper {
-    position: relative;
-    display: flex;
-    width: 400%;
-    transition: transform $transition;
-
-    @include tablet {
-      width: calc(200% + 60px);
-    }
-
-    @include desktop {
-      width: calc(200% + 40px);
-    }
-  }
-
-  &__slide {
-    width: 100%;
-
-    @include tablet {
-      margin-right: 30px;
-    }
-
-    @include desktop {
-      margin-right: 20px;
-    }
-  }
-
-  &__picture {
-    display: block;
-    margin-bottom: 20px;
   }
 
   &__image {
-    display: block;
-    margin-bottom: 20px;
-    width: 100%;
-    height: calc(100% - 84px);
+    &--1 {
+      width: 100%;
+      height: 100%;
+      background: no-repeat center url("../images/slider/photo1-1.jpg");
+      background-size: cover;
+      border-radius: 30px;
+      transition: width $transition;
 
-    @include tablet {
-      height: calc(100% - 89px);
+      @include onDesktop {
+        border-radius: 30px 0;
+      }
     }
 
-    @include desktop {
-      height: calc(100% - 87px);
+    &--2 {
+      width: 0;
+      height: 100%;
+      background: no-repeat center url("../images/slider/photo2.jpg");
+      background-size: cover;
+      border-radius: 30px;
+      transition: width $transition;
+
+      @include onDesktop {
+        border-radius: 30px 0;
+      }
+    }
+
+    &--3 {
+      width: 0;
+      height: 100%;
+      background: no-repeat center url("../images/slider/photo3.jpg");
+      background-size: cover;
+      border-radius: 30px;
+      transition: width $transition;
+
+      @include onDesktop {
+        border-radius: 30px 0;
+      }
     }
   }
 
-  &__name {
-    margin-bottom: 10px;
-    padding: 0 20px;
-    font-weight: $big-weight;
-    font-size: $bigger-size;
-    line-height: 27px;
-    letter-spacing: $letter-spacing;
-    text-transform: uppercase;
-    color: $black;
+  @include onDesktop {
+    right: 0;
+    width: calc(50vw - 10px);
+    height: calc(100vh - 120px);
+    min-height: 520px;
+    max-height: 680px;
+  }
 
-    &--tablet {
+  @include onDesign {
+    width: calc(50vw - 113px);
+  }
+
+  &__button {
+    position: absolute;
+    left: 20px;
+    bottom: 108px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $main-light;
+    cursor: pointer;
+
+    @include onTablet {
+      left: 41px;
+      bottom: 116px;
+    }
+
+    @media (max-height: 710px) {
+      bottom: 50%;
+      transform: translateY(50%);
+
+      @include onDesktop {
+        bottom: 66px;
+        left: 78px;
+        transform: none;
+      }
+
+      @include onDesign {
+        left: 48px;
+      }
+    }
+
+    @include onDesktop {
+      bottom: 66px;
+      left: 78px;
+    }
+
+    @include onDesign {
+      left: 48px;
+    }
+
+    &--right {
+      left: 68px;
+
+      @include onTablet {
+        left: 89px;
+      }
+
+      @include onDesktop {
+        left: 126px;
+      }
+
+      @include onDesign {
+        left: 96px;
+      }
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    height: 9px;
+  }
+
+  &__subtitle {
+    position: absolute;
+    left: 20px;
+    bottom: 72px;
+    font-family: $additional-font;
+    font-weight: $bold-weight;
+    color: $main-light;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      left: 41px;
+      bottom: 80px;
+    }
+
+    @media (max-height: 710px) {
+      bottom: 50%;
+      left: 116px;
+      transform: translateY(calc(-50% + 6px));
+
+      @include onTablet {
+        left: 137px;
+      }
+
+      @include onDesktop {
+        left: 182px;
+        bottom: 96px;
+        transform: none;
+      }
+
+      @include onDesign {
+        left: 152px;
+      }
+    }
+
+    @include onDesktop {
+      left: 182px;
+      bottom: 96px;
+    }
+
+    @include onDesign {
+      left: 152px;
+    }
+  }
+
+  &__description {
+    position: absolute;
+    left: 20px;
+    bottom: 24px;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: $light-weight;
+    color: $main-light;
+
+    @include onTablet {
+      left: 41px;
+      bottom: 32px;
+    }
+
+    @media (max-height: 710px) {
+      bottom: 50%;
+      left: 116px;
+      transform: translateY(calc(50% + 14px));
+
+      @include onTablet {
+        left: 137px;
+      }
+
+      @include onDesktop {
+        left: 182px;
+        bottom: 48px;
+        transform: none;
+      }
+
+      @include onDesign {
+        left: 152px;
+      }
+    }
+
+    @include onDesktop {
+      left: 182px;
+      bottom: 48px;
+    }
+
+    @include onDesign {
+      left: 152px;
+    }
+  }
+
+  &__br {
+    @media (max-height: 710px) {
       display: none;
     }
 
-    @include tablet {
-      margin-bottom: 15px;
-      padding: 0;
-
-      &--mobile {
-        display: none;
-      }
-
-      &--tablet {
-        display: block;
-      }
-    }
-
-    @include desktop {
-      margin-bottom: 13px;
-    }
-  }
-
-  &__price {
-    padding: 0 20px;
-    font-weight: $link-weight;
-    font-size: $bigger-size;
-    line-height: 27px;
-    letter-spacing: $letter-spacing;
-    text-transform: uppercase;
-    color: $black;
-
-    @include tablet {
-      padding: 0;
-    }
-  }
-
-  @for $point from 1 through 4 {
-    &__point--#{$point}:checked + &__label-container &__label {
-      color: $black;
-
-      &::after {
-        content: "";
-        display: block;
-        margin-top: 10px;
-        height: 2px;
-        background-color: $black;
-      }
+    @include onDesktop {
+      display: block;
     }
   }
 }

@@ -1,18 +1,15 @@
 .button {
-  display: block;
-  padding: 19px 0 20px;
-  width: 100%;
-  font-weight: $big-weight;
-  font-size: $display-size;
-  line-height: 21px;
+  font-family: $additional-font;
+  font-size: 15px;
+  line-height: 22px;
   text-align: center;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: $light-gray;
-  background-color: $black;
+  color: $main-light;
+  text-decoration: none;
+  background-color: $button-blue;
+  border-radius: 8px;
   transition: background-color $transition;
 
   &:hover {
-    background-color: $hover-green;
+    background-color: $button-hover;
   }
 }

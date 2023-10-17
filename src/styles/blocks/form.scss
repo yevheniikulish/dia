@@ -36,6 +36,10 @@
       @include onTablet {
         margin-bottom: 80px;
       }
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
     }
 
     &::placeholder {

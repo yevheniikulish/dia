@@ -27,11 +27,15 @@
       margin-bottom: 48px;
     }
 
-    &--textarea {
-      height: 37px;
-      resize: vertical;
+    &:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 50px $black-back;
+      -webkit-text-fill-color: $main-light;
+    }
 
+    &--textarea {
       margin-bottom: 56px;
+      height: 37px;
+      resize: none;
 
       @include onTablet {
         margin-bottom: 80px;

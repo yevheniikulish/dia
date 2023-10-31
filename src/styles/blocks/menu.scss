@@ -24,7 +24,7 @@
   }
 
   &__icon {
-    align-self: center;
+    align-self: flex-end;
     display: block;
     width: 24px;
     height: 24px;
@@ -32,6 +32,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 18px 8px;
+
+    &--cross {
+      background-image: url("../images/menu/cross.svg");
+      background-size: 24px;
+    }
 
     @include onDesktop {
       display: none;
